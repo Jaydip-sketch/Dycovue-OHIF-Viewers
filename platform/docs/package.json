@@ -1,8 +1,11 @@
 {
+  "homepage": "https://Jaydip-sketch.github.io/Dycovue-OHIF-Viewers/",
   "name": "ohif-docs",
   "version": "3.11.0-beta.91",
   "private": true,
   "scripts": {
+    "predeploy": "yarn run build",
+    "deploy": "cd platform/app/dist && git init && git checkout -b gh-pages && git add . && git commit -m 'Deploy' && git remote add origin https://github.com/Jaydip-sketch/Dycovue-OHIF-Viewers.git && git push origin gh-pages --force",
     "docusaurus": "docusaurus",
     "clean": "shx rm -rf dist",
     "clean:deep": "yarn run clean && shx rm -rf node_modules",
@@ -15,7 +18,6 @@
     "generate-llms-txt": "node ./scripts/generate-llms-txt.js",
     "generate-llms-full-txt": "node ./scripts/generate-llms-full-txt.js",
     "swizzle": "docusaurus swizzle",
-    "deploy": "docusaurus deploy",
     "clear": "docusaurus clear",
     "serve": "docusaurus serve",
     "write-translations": "docusaurus write-translations",
